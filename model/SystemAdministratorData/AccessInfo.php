@@ -8,7 +8,7 @@ class Access
 
    	public $table = 'register';
  
-//to retrieve all accounts that in pending status from database
+	//to retrieve all accounts that in pending status from database
 	public function model_show()
 	{
 		$query = "SELECT * FROM register WHERE Approval_status = 'PENDING'";

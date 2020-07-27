@@ -10,6 +10,17 @@ class bookingInfo
 	
 	public $bookingid;
 	public $value,$eventname,$packagename,$startdate,$enddate,$starttime,$endtime,$venue,$price;
+
+
+	public function model_pack()
+	{
+		$query = "SELECT * FROM package";
+			
+		$dis = DB::Run($query)->fetchAll(PDO::FETCH_ASSOC);
+		
+		return $dis;
+	}
+
         
         public function booking()
 	{

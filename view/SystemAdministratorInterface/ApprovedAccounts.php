@@ -195,14 +195,13 @@ header:nth-child(even) {
 //display data in view
 for ($i=0; $i < $length; $i++) { 
      # code...
-  
  ?>
       <tr>        
  <td> <?php echo $Name[$i] ?></td>
  <td> <?php echo $Username[$i] ?></td>
  <td> <?php echo $Email[$i] ?></td>
   <td> <?php echo $Approval_Date[$i] ?></td>
-    <td> <?php echo $Account_Type[$i] ?></td>
+<td> <?php echo $Account_Type[$i] ?></td>
 
 <td><?php echo "<a href=Successfully.php?id=",urlencode($Username[$i]),">" ?> <button  class="btn" type="button">Block</button> <?php "</a>" ?></td> 
 
