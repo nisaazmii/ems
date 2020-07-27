@@ -42,14 +42,14 @@ $id2=$_GET['id2'];
    {
            echo "<script type='text/javascript'>alert('The Account has been rejected successully?'')</script>";
 
-           header("location: ManageAccounts.php");
+           header("location: PendingAccounts.php");
    }
    else
    {
 
            echo "<script type='text/javascript'>alert('The Account have been approved successully?'')</script>";
 
-           header("location: ManageAccounts.php");
+           header("location: PendingAccounts.php");
 
    }
 
