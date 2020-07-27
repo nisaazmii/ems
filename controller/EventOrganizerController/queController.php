@@ -9,7 +9,7 @@ class queController {
    public function askquestion()
     {
        
-       $askquestion = new queInfo();
+       $askquestion = new quesInfo();
        
        $askquestion->email = $_POST['email'];
                 
