@@ -16,31 +16,24 @@ class AccountController
 		 foreach ($user as $tmp) 
             { 
           
-		if($tmp['Password'] == $_POST['Password']  &&  $tmp['Username'] == $_POST['Username'] && $_POST['Account_Type']=="Customer" && $tmp['Account_Type']=="Customer")
+		if($tmp['Password'] == $_POST['Password']  &&  $tmp['Username'] == $_POST['Username'])
 		{
-
-					header("Location: http://localhost/ems/view/CustomerInterface/HomeInterface.php");	
-				
-		}
-		else if($tmp['Password'] == $_POST['Password']  &&  $tmp['Username'] == $_POST['Username'] && $_POST['Account_Type']=="Supplier" && $tmp['Account_Type']=="Supplier" && $tmp['Approval_Status'] == "APPROVE")
-		{
-
-					header("Location: http://localhost/ems/view/SupplierInterface/SupplierHomeInterface.html");	
-			
-		}
-			else if($tmp['Password'] == $_POST['Password']  &&  $tmp['Username'] == $_POST['Username'] && $_POST['Account_Type']=="EventOrganizer" && $tmp['Account_Type']=="EventOrganizer" && $tmp['Approval_Status'] == "APPROVE")
-		{
-
-			
-					header("Location: EOHomeInterface.php");
-			
-		}
-		else if($tmp['Password'] == $_POST['Password']  &&  $tmp['Username'] == $_POST['Username'] && $tmp['Account_Type']=="Admin")
-		{
-
-			
-					header("Location: http://localhost/ems/view/SystemAdministratorInterface/AdminHome.php");
-			
+			if ($tmp['Account_Type']=="Customer")
+			{
+				header("Location: http://localhost/ems/view/CustomerInterface/HomeInterface.php");
+			}
+			else  if ($tmp['Account_Type']=="Supplier" && $tmp['Approval_Status'] == "APPROVE")
+			{
+				header("Location: http://localhost/ems/view/SupplierInterface/SupplierHomeInterface.html");	
+			}
+			else if ($tmp['Account_Type']=="EventOrganizer" && $tmp['Approval_Status'] == "APPROVE")
+			{
+				header("Location: http://localhost/ems/view/EventOrganizerInterface/EOHomeInterface.php");
+			}
+			else if ($tmp['Account_Type']=="Admin")
+			{
+				header("Location: http://localhost/ems/view/SystemAdministratorInterface/AdminHome.php");
+			}
 		}
 		else
 		{

@@ -43,13 +43,6 @@ if (isset($_POST['submit'])) {
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         
-
-						<div>
-                         Account Type: <br>
-                          <input type="radio" name="Account_Type" value="Customer" checked> Customer <br>
-   						 <input type="radio" name="Account_Type" value="EventOrganizer"> Event Organizer <br>
-   						 <input type="radio" name="Account_Type" value="Supplier"> Supplier <br>
-                        </div>
 						<br>
                         
                         <div class="form-group">
