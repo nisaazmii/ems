@@ -178,8 +178,7 @@ if (isset($_POST['submit'])) {
 				
 				<tr>
                     <td>Time</td>
-                    <td><b><input type="radio" name="timetesting" value="10:00 AM - 12:00PM"> 10:00 AM - 12:00PM<br>
-						<input type="radio" name="timetesting" value="14:00PM - 16:00PM" checked> 14:00PM - 16:00PM<br></td>
+                    <td><b><?php echo date("h:i:a")?></b></td>
                 </tr>
 				
 				<tr>
