@@ -173,7 +173,7 @@ if (isset($_POST['submit'])) {
 				
                 <tr>
                     <td>Date</td>
-                    <td><input type='date' name='datetesting' class='form-control' /></td>
+                    <td> <b> <?php echo  date("d-m-Y")?> </b> </td>
                 </tr>
 				
 				<tr>

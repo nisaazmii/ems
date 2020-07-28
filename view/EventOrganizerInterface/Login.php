@@ -59,6 +59,7 @@ if (isset($_POST['submit'])) {
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Login"/>
                         </div>
                     </form>
+                    
                     <?php
                         if($login_button == '')
                         {
@@ -71,6 +72,13 @@ if (isset($_POST['submit'])) {
                             echo '<div align="center">'.$login_button . '</div>';
                         }
                     ?>
+
+                     <div style="text-align: center;">
+                    <b style="color:#FF0000">
+                    Customers Only
+                    </b>
+                    </div>
+
                     <p class="Register">
                         Create New Account ? <a href="EO_Registration.php" class="Register-link">Register</a>
                     </p>
