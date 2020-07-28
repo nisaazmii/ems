@@ -174,7 +174,7 @@
                     <td></td>
                     <td>
 						<input class="btn btn-success" type="submit" name="submit" value="OK" onclick="return  confirm('Are you sure to send question?')">
-						<input class="btn btn-danger" type="reset" value="Cancel" onclick="return  confirm('Are you sure to cancel send question?')"></td>
+						<input class="btn btn-danger" type="reset" value="CANCEL" onclick="return  confirm('Are you sure to cancel send question?')"></td>
                     </td>
                 </tr>
             </table></center>
