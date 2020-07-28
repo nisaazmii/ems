@@ -3,6 +3,16 @@
 require_once '../../controller/EventOrganizerController/AccountController.php';	
 
 
+include('config.php');
+$login_button = '';
+
+if(!isset($_SESSION['access_token']))
+{
+    $_SESSION['naif'] = "error";
+    $login_button = '<a href="'.$google_client->createAuthUrl().'"><img src="sign-in-with-google.png" /></a>';
+}
+
+
 
 if (isset($_POST['submit'])) {
 	$val = new AccountController();
@@ -43,19 +53,32 @@ if (isset($_POST['submit'])) {
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         
-
-						<div>
-                         Account Type: <br>
-                          <input type="radio" name="Account_Type" value="Customer" checked> Customer <br>
-   						 <input type="radio" name="Account_Type" value="EventOrganizer"> Event Organizer <br>
-   						 <input type="radio" name="Account_Type" value="Supplier"> Supplier <br>
-                        </div>
 						<br>
                         
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Login"/>
                         </div>
                     </form>
+                    
+                    <?php
+                        if($login_button == '')
+                        {
+                            echo '<div class="panel-heading">Welcome User</div><div class="panel-body">';
+                            echo $_SESSION['access_token'];
+                            echo 'href="../../CustomerInterface/HomeInterface.php"';
+                        }
+                        else
+                        {
+                            echo '<div align="center">'.$login_button . '</div>';
+                        }
+                    ?>
+
+                     <div style="text-align: center;">
+                    <b style="color:#FF0000">
+                    Customers Only
+                    </b>
+                    </div>
+
                     <p class="Register">
                         Create New Account ? <a href="EO_Registration.php" class="Register-link">Register</a>
                     </p>

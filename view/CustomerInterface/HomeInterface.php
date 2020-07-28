@@ -129,20 +129,59 @@ if(isset($_POST['delete'])) {
     </header>
     <!-- Header Area End -->
 
-    <!-- Empty Area Start -->
-    <section id="bill-css">
+<!-- Header Area End -->
+<section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/100.png);">
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/f1.png);">
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100">
                     <div class="container h-100">
-
+                        <div class="row h-100 align-items-center">
                             <!-- Welcome Text -->
-							
-							<?php
+                            <div class="col-12 col-md-9 col-lg-6">
+                                <div class="welcome-text">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/f2.png);">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-9 col-lg-6">
+                                <div class="welcome-text">
+              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-?>
+      <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/f3.png);">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-9 col-lg-6">
+                                <div class="welcome-text">
+              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!DOCTYPE HTML>
 <html>

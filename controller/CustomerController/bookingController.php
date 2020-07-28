@@ -6,6 +6,14 @@ class bookingController {
 	
 	//display all booking att
 	
+
+	public function packages()
+	{
+		$dis = bookingInfo::model_pack();
+		return $dis;
+	}
+
+
 	public function index($value=''){
 		// assign the returned values(array of equipment object) to variable users
 		$booking = bookingInfo::All(); // we use the static method All() that we

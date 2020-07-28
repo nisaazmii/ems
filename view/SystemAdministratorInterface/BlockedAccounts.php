@@ -138,7 +138,7 @@ header:nth-child(even) {
                                 <ul id="nav">
                                     <li class="active"><a href="AdminHome.php">Home</a></li>
                                     <li><a href="ManageAccounts.php">Manage Accounts</a>
-                                    <li><a>Generate Report</a>
+                                <!--     <li><a>Generate Report</a>
                                         <ul class="dropdown">
                                             <li><a href="SupplierReport.php">Supplier Report</a></li>
                                             <li><a href="EquipmentReport.php">Equipment Report</a></li>
@@ -146,7 +146,7 @@ header:nth-child(even) {
                                             <li><a href="CustomerReport.php">Customer Report</a></li>
                                             <li><a href="IncomeReport1.php">Income Report</a></li>
                                             <li><a href="analytics.php">Analytics</a></li>
-                                         </ul>   
+                                         </ul>   --> 
                                 
                                 </ul>
 
@@ -176,7 +176,7 @@ header:nth-child(even) {
     <br><br>
     <section id="main" class="section-bg wow fadeInUp">
 
-    <a href="ManageAccounts.php"><button  class="btn" type="button">User Pending Accounts</button></a>    
+    <a href="PendingAccounts.php"><button  class="btn" type="button">User Pending Accounts</button></a>    
     <a href="ApprovedAccounts.php"><button  class="btn" type="button"> Approved Accounts</button></a>
     <button class="btn" type="button"disabled style="background-color:grey;">Blocked Accounts </button>
    <br><br>  

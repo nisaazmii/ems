@@ -1,5 +1,6 @@
 <?php
 require_once '../../controller/CustomerController/bookingController.php';
+$Pack =array();
 
 if (isset($_POST['proceedBTN'])) {
 	// create controller
@@ -7,7 +8,18 @@ if (isset($_POST['proceedBTN'])) {
 	// call method dd
         $booking->booking();
 }
+
+$show = bookingController::packages();
+foreach ($show as $row) {
+//get the data controller in put them in new varibles to display
+$Pack[] =$row['PkgName'];
+}
+
+$length = count($Pack);
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -194,13 +206,24 @@ if (isset($_POST['proceedBTN'])) {
                     <td>Event Name</td>
                     <td><input type='text' name='eventname' class='form-control' /></td>
                 </tr>
+ <br><td>Package Type</td>
+                    <?php
+
+                    //display data in view
+                    for ($i=0; $i < $length; $i++) { 
+                         # code...
+                     ?>
                 <tr>
-                    <br><td>Package Type</td>
-					<td><br><input type="radio" name="packagename" value="Western Package 1" checked>Western Package 1</input><br>
-					    <input type="radio" name="packagename" value="Western Package 2">Western Package 2<br>
-							
+    
+					<td><br><input type="radio" name="packagename"> <?php echo $Pack[$i] ?></input> </td>
+<!-- 					    <input type="radio" name="packagename" value="Western Package 2">Western Package 2<br>
+ -->
+                            <?php
+                                }
+                             ?>
+                             <br>
 							<a href="./viewpackInterface.php"target="_blank">Package Menu List</a><br>
-					</td>
+					
 				
 					
                 </tr>

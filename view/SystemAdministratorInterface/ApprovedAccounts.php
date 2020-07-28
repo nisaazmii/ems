@@ -134,7 +134,7 @@ header:nth-child(even) {
                                 <ul id="nav">
                                     <li class="active"><a href="AdminHome.php">Home</a></li>
                                     <li><a href="ManageAccounts.php">Manage Accounts</a>
-                                    <li><a>Generate Report</a>
+                                <!--     <li><a>Generate Report</a>
                                         <ul class="dropdown">
                                             <li><a href="SupplierReport.php">Supplier Report</a></li>
                                             <li><a href="EquipmentReport.php">Equipment Report</a></li>
@@ -144,7 +144,7 @@ header:nth-child(even) {
                                                <li><a href="analytics.php">Analytics</a></li>
 
                                          </ul>   
-                                
+                                 -->
                                 </ul>
 
                                 <!-- Cart Icon -->
@@ -172,7 +172,7 @@ header:nth-child(even) {
     ============================-->
     <br><br>
     <section id="main" class="section-bg wow fadeInUp">  
-    <a href="ManageAccounts.php"> <button  class="btn" type="button" >User Pending Accounts</button></a>
+    <a href="PendingAccounts.php"> <button  class="btn" type="button" >User Pending Accounts</button></a>
     <button  class="btn" type="button" disabled style="background-color:grey;"> Approved Accounts</button>
     <a href="BlockedAccounts.php"><button class="btn" type="button">Blocked Accounts</button></a>
    <br><br>  
@@ -195,14 +195,13 @@ header:nth-child(even) {
 //display data in view
 for ($i=0; $i < $length; $i++) { 
      # code...
-  
  ?>
       <tr>        
  <td> <?php echo $Name[$i] ?></td>
  <td> <?php echo $Username[$i] ?></td>
  <td> <?php echo $Email[$i] ?></td>
   <td> <?php echo $Approval_Date[$i] ?></td>
-    <td> <?php echo $Account_Type[$i] ?></td>
+<td> <?php echo $Account_Type[$i] ?></td>
 
 <td><?php echo "<a href=Successfully.php?id=",urlencode($Username[$i]),">" ?> <button  class="btn" type="button">Block</button> <?php "</a>" ?></td> 
 
