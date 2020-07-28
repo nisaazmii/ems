@@ -164,7 +164,22 @@ if(isset($_POST['delete'])) {
                 </div>
             </div>
         </div>
-
+<!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/facebook-add.png);">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-9 col-lg-6">
+                                <div class="welcome-text">
+              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       <!-- Single Welcome Slide -->
             <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/f3.png);">
                 <!-- Welcome Content -->
