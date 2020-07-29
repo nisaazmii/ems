@@ -10,6 +10,14 @@ if(isset($_POST['delete'])) {
 }
 
 
+if(isset($_POST['search']))
+{
+
+      //$sTo=$_POST['service'];
+      $_SESSION['$de'] = $_POST['service'];
+      header("location:searchEquipment.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +36,7 @@ if(isset($_POST['delete'])) {
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../../libs/css/style0.css">
-	<link type="text/css" href="../../libs/css/payment.css" rel="stylesheet">
+    <link type="text/css" href="../../libs/css/payment.css" rel="stylesheet">
 
 </head>
 
@@ -59,8 +67,8 @@ if(isset($_POST['delete'])) {
             </div>
         </div>
         <!-- Top Header Area End -->
-		
-		
+        
+        
         <!-- Main Header Start -->
         <div class="main-header-area">
             <div class="classy-nav-container breakpoint-off">
@@ -89,26 +97,26 @@ if(isset($_POST['delete'])) {
                                     <li><a href="#">Services</a>
                                         <ul class="dropdown">
                                             <li><a href="./viewpackInterface.php">View Event Package</a></li>
-											<li><a href="./viewquipInterface.php">View Equipment List</a></li>
+                                            <li><a href="./viewquipInterface.php">View Equipment List</a></li>
                                             
                                             
                                         
                                         </ul>
                                     </li>
-									
-									<li><a href="#">Booking </a>
+                                    
+                                    <li><a href="#">Booking </a>
                                         <ul class="dropdown">
                                             <li><a href="./IndexBookingInterface.php">Booking List</a></li>
-											<li><a href="./bookingInterface.php">Make new booking</a></li>
+                                            <li><a href="./bookingInterface.php">Make new booking</a></li>
                                             
                                             
                                         
                                         </ul>
                                     </li>
-									
-									
+                                    
+                                    
 
-									<li><a href="./index_feedback.php">Feedback</a></li>
+                                    <li><a href="./index_feedback.php">Feedback</a></li>
                                     
                                     <li><a href="../WelcomePage.php">Log out</a></li>
                                     
@@ -139,8 +147,8 @@ if(isset($_POST['delete'])) {
                     <div class="container h-100">
 
                             <!-- Welcome Text -->
-							
-							
+                            
+                            
 
 
 
@@ -161,8 +169,14 @@ if(isset($_POST['delete'])) {
         <div class="page-header">
             <h1>Equipment List</h1>
         </div>
-      
-		<!DOCTYPE html>
+        <div>
+        <form action="" method="post">
+                                  <input type="text" placeholder="Search for Equipment" name="service" style="width:500px; height:38px; ">
+                                  <button type="submit" name="search" class="btn"><i class="fa fa-search"></i></button>
+                                </form>
+        </div>
+        
+        <!DOCTYPE html>
 <html>
 <head>
   <title></title>
@@ -183,7 +197,7 @@ if(isset($_POST['delete'])) {
 
                     <th><b>ID</b></th>
                     <th><b>Equipment Name</b></th>
-					<th><b>Quantity</b></th>
+                    <th><b>Quantity</b></th>
                     <th><b>Price</b></th>
                    
 
@@ -198,7 +212,7 @@ if(isset($_POST['delete'])) {
                       <td><?php echo $res['eqid']; ?></td>
                       <td><?php echo $res['EqName']; ?></td>
                       <td><?php echo $res['Qty']; ?></td>
-					  <td><?php echo $res['EqPrice']; ?></td>
+                      <td><?php echo $res['EqPrice']; ?></td>
                       
 
                     </tr>
@@ -214,7 +228,7 @@ if(isset($_POST['delete'])) {
   </main>
 </body>
 </html>
-		
+        
              
          
     </div> <!-- end .container -->
@@ -262,7 +276,7 @@ if(isset($_POST['delete'])) {
 </body>
 </html>
 
-							
+                            
                             <div class="col-12 col-md-9 col-lg-6">
                                 
                             
@@ -271,10 +285,10 @@ if(isset($_POST['delete'])) {
                     </div>
                 </div>
             </div>
-		</div>
+        </div>
     </section>
     <!-- Empty Area End -->
-	
+    
    
 
     <!-- All JS Files -->
@@ -288,8 +302,8 @@ if(isset($_POST['delete'])) {
     <script src="../../libs/js/akame.bundle.js"></script>
     <!-- Active -->
     <script src="../../libs/js/default-assets/active.js"></script>
-	<script type="text/javascript" src="../../libs/js/payment.js"></script>
-	
-	</body>
+    <script type="text/javascript" src="../../libs/js/payment.js"></script>
+    
+    </body>
 
 </html>
