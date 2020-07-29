@@ -1,12 +1,14 @@
 <?php
-
 require_once '../../controller/SupplierController/EqController.php';
 
 $data = new EqController();
-$result = $data->index();
 
-if(isset($_POST['delete'])) {
-    $data->destroy($_POST['delete']);
+if (isset($_POST['update'])) {
+    $result = $data->update($_POST['eqid']);
+}
+
+if (isset($_GET['eqid'])) {
+  $result = $data->get($_GET['eqid']);
 }
 
 ?>
@@ -20,7 +22,7 @@ if(isset($_POST['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Equipment List</title>
+    <title>UPDATE</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../../libs/img/core-img/favicon1.ico">
@@ -86,15 +88,14 @@ if(isset($_POST['delete'])) {
                             <div class="classynav">
                                 <ul id="nav">
                                     <li><a href="SupplierHomeInterface.html">Home</a></li>
-                                    <li  class="active"><a href="#">Services</a>
-                                        <ul class="dropdown">
+                                    <li><a class="active" href="#">Services</a>
+                                        <ul class="active" class="dropdown">
                                             <li><a href="indexEqInterface.php">- Equipment</a></li>
                                             <li><a href="indexPkgInterface.php">- Event Package</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="progressInterface.php">Progress</a></li>
                                     <li><a href="feedbackInterface.php">Feedback</a></li>
-                                    <li><a href="../WelcomePage.php">Log out</a></li>
                                 </ul>
 
                             </div>
@@ -107,62 +108,45 @@ if(isset($_POST['delete'])) {
     </header>
     <!-- Header Area End -->
 
-    <!-- List Equipment Area Start -->
+    <!-- Update Equipment Area Start -->
     <section>
-        <!-- Single Welcome Slide -->
-        <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/100.png);">
-        <!-- Welcome Content -->
-        <div class="welcome-content h-100">
-        <div class="container h-100">
+    <!-- Single Welcome Slide -->
+    <div class="single-welcome-slide bg-img" style="background-image: url(../../libs/img/bg-img/100.png);">
+    <!-- Welcome Content -->
+    <div class="welcome-content h-100">
+    <div class="container h-100">
 
-        <!-- Welcome Text -->
-        <div class="col-15 col-md-11 col-lg-8">
-            <h2>List of Equipment</h2><br>
+    <!-- Welcome Text -->
+    <div class="col-12 col-md-9 col-lg-6">
+        <h2>Update Equipment</h2><br>
 
-        <div class='right-button-margin'>
-            <a href='addEqInterface.php' class='btn btn-primary m-b-1em'>Add New Equipment</a>
-        </div><br>
-
-        <div class="card-body table-responsive p-0">
-            <table class="table table-hover">
-            <thead>
-            <tr>
-                <th><b>Equipment ID</b></th>
-                <th><b>Equipment Name</b></th>
-                <th><b>Quantity</b></th>
-                <th><b>Price/Item</b></th>
-                <th><b>Date</b></th>
-                <th><b>Action</b></th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($result as $res) { ?>
-            <tr>
-                <tr>
-                    <td><?php echo $res['eqid']; ?></td>
-                    <td><?php echo $res['EqName']; ?></td>
-                    <td><?php echo $res['Qty']; ?></td>
-                    <td><?php echo $res['EqPrice']; ?></td>
-                    <td><?php echo $res['EqDate']; ?></td>
-                    <td>
-                    <a href="updateEqInterface.php?eqid=<?php echo $res['eqid']; ?>" class="btn btn-primary pull-left" style="margin-right: 5px">Update</a><br><br>
-                    <form method="POST" action="">
-                        <input type="hidden" name="delete" value="<?php echo $res['eqid'] ?>">
-                        <input type="submit" name="btnDelete" class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure you want to delete?')">
-                    </form>
-                    </td>
-                </tr>
-            </tr><?php } ?>
-            </tbody>
-
-            </table> 
-        </div>       
+        <div class="card-body">
+            <form action="" method="post" role="form">
+                <!-- text input -->
+                <div class="form-group">
+                    <label>Equipment Name : </label> 
+                    <input class="form-control" name="EqName"  type="text" value="<?php echo $result['EqName']; ?>">
+                </div><br>
+                <div class="form-group">
+                    <label>Quantity : </label> 
+                    <input class="form-control" name="Qty" type="number" value="<?php echo $result['Qty']; ?>">
+                </div><br>
+                <div class="form-group">
+                    <label>Price (RM) : </label> 
+                    <input class="form-control" name="EqPrice" type="number" value="<?php echo $result['EqPrice']; ?>">
+                </div><br>
+                <div class="form-group">
+                    <input type="hidden" name="eqid" value="<?php echo $result['eqid']; ?>">
+                    <input class="btn btn-primary" name="update" type="submit" value="Update">
+                </div>
+            </form>
         </div>
-        </div>
-        </div>
-        </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </section>
-    <!-- Empty Area End -->
+    <!-- Area End -->
 	
     <!-- Footer Area Start -->
     <footer class="footer-area section-padding-80-0">

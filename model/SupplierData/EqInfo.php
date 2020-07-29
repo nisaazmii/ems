@@ -100,7 +100,32 @@ class EqInfo{
 
 	}
 
-	
+	public function update(){
+
+		$query = "UPDATE `equipment` SET `EqName`=:EqName, `Qty`=:Qty, `EqPrice`=:EqPrice, `EqDate`=:EqDate WHERE `eqid`=:eqid";
+
+		$param = [ //the parameter that will be bind by pdo
+			':EqName' => $this->EqName,
+			':Qty' => $this->Qty,
+			':EqPrice' => $this->EqPrice,
+			':EqDate' => $this->EqDate,
+			':eqid' => $this->eqid
+			];	
+
+		try {
+			// use static method run() from class DB
+	    	if ($stmt = DB::Run($query, $param)) { 
+
+	    		// we dont use fetch() or fetchAll() here
+				// because no data will be return when we
+				// perform update operation								   
+				                                   
+	    		return true;
+	    	};
+		} catch (PDOException $e) {
+			return $e->getMessage();
+		}
+	}
 
 	public function delete(){
 

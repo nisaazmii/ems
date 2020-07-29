@@ -46,6 +46,30 @@ class EqController{
 		return $equipment;
 	}
 
+	public function update($eqid){
+
+		// get equipment data associate with $eqid
+		$findUser = EqInfo::getById($eqid);
+
+		// update/set the attributes of the equipment
+		$equipment = new EqInfo();
+
+		$equipment->eqid = $findUser['eqid'];
+		$equipment->EqName = $_POST['EqName'];
+		$equipment->Qty = $_POST['Qty'];
+		$equipment->EqPrice = $_POST['EqPrice'];
+		$equipment->EqDate = date("Y-m-d");
+
+		// update the equipment data in database
+		$equipment->update();
+
+		// set message
+		$message="The record has been updated";
+        	echo "<script type='text/javascript'> 
+        		alert('$message');
+        		window.location.href=('../../view/SupplierInterface/indexEqInterface.php'); </script>";
+	}
+
 	public function destroy($eqid){
 
 		// get equipment data associate with $eqid
