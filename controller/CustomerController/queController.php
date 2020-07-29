@@ -1,5 +1,6 @@
 <?php
 
+require_once '../../model/CustomerData/quesInfo.php';
 
 
 class queController {
@@ -13,7 +14,7 @@ class queController {
        
        $askquestion->email = $_POST['email'];
                 
-       $askquestion->askquestion = $_POST['question'];
+       $askquestion->question = $_POST['question'];
        
        
        $askquestion->askquestion();

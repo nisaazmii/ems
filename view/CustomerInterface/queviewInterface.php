@@ -1,4 +1,13 @@
+<?php
+require_once '../../controller/CustomerController/queController.php';
 
+if (isset($_POST['submit'])) {
+    // create controller
+    $askquestion = new queController();
+    // call method dd
+        $askquestion->askquestion();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
