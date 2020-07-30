@@ -24,7 +24,4 @@ class queController {
                             window.location.href=('../../view/EventOrganizerInterface/submitInterface.php');
                         </SCRIPT>";
        }
-      
-    
-
-
+}
